@@ -11,7 +11,7 @@ USE dbLivraria
 
 CREATE TABLE tbLivro (
 	idLivro		INTEGER			NOT NULL,
-	nomeLivro	VARCHAR(100)	NULL,
+	nomeLivro	VARCHAR(100)		NULL,
 	linguaLivro	VARCHAR(50)		NULL,
 	anoLivro	INTEGER			NULL,
 	PRIMARY KEY (idLivro)
@@ -21,10 +21,10 @@ GO
 
 CREATE TABLE tbAutor (
 	idAutor			INTEGER			NOT NULL,
-	nomeAutor		VARCHAR(100)	NULL,
-	dataNascAutor	DATE			NULL,
+	nomeAutor		VARCHAR(100)		NULL,
+	dataNascAutor		DATE			NULL,
 	paisAutor		VARCHAR(50)		NULL,
-	biografiaAutor	VARCHAR(MAX)	NULL
+	biografiaAutor		VARCHAR(MAX)		NULL
 	PRIMARY KEY(idAutor)
 )
 
@@ -32,9 +32,9 @@ GO
 
 CREATE TABLE tbEdicao(
 	ISBN			INTEGER			NOT NULL,
-	precoEdicao		DECIMAL(7,2)	NULL,
-	ano				INTEGER			NULL,
-	numPagEdicao	INTEGER			NULL,
+	precoEdicao		DECIMAL(7,2)		NULL,
+ano				INTEGER			NULL,
+	numPagEdicao		INTEGER			NULL,
 	qtdEstoque		INTEGER			NULL,
 	PRIMARY KEY(ISBN)
 )
@@ -42,11 +42,11 @@ CREATE TABLE tbEdicao(
 GO
 
 CREATE TABLE tbEditora(
-	idEditora			INTEGER			NOT NULL,
-	nomeEditora			VARCHAR(50)		NULL,
-	logradouroEditora	VARCHAR(255)	NULL,
+	idEditora		INTEGER			NOT NULL,
+	nomeEditora		VARCHAR(50)		NULL,
+	logradouroEditora	VARCHAR(255)		NULL,
 	numeroEditora		INTEGER			NULL,
-	CEPEditora			CHAR(8)			NULL,
+	CEPEditora		CHAR(8)			NULL,
 	telefoneEditora		CHAR(11)		NULL,
 	PRIMARY KEY(idEditora)
 )
@@ -98,13 +98,13 @@ INSERT INTO tbLivro VALUES
 (1001, 'CCNA 4.1',				'PT-BR',	2015), 
 (1002, 'HTML 5',				'PT-BR',	2017),
 (1003, 'Redes de Computadores',	'EN',		2010),
-(1004, 'Android em AÁ„o',		'PT-BT',	2018)
+(1004, 'Android em A√ß√£o',		'PT-BT',	2018)
 
 INSERT INTO tbAutor(idAutor, nomeAutor, anoNascAutor, paisAutor, biografiaAutor) VALUES
-(10001, 'In·cio da Silva',		1975, 'Brasil', 'Programador WEB desde 1995'),
-(10002, 'Andrew Tannenbau,',	1975, 'EUA',	'Chefe do Departamento de Sistemas de ComputaÁ„o da Universidade de Vrij'),
+(10001, 'In√°cio da Silva',		1975, 'Brasil', 'Programador WEB desde 1995'),
+(10002, 'Andrew Tannenbau,',	1975, 'EUA',	'Chefe do Departamento de Sistemas de Computa√ß√£o da Universidade de Vrij'),
 (10003, 'Luis Rocha',			1975, 'Brasil', 'Programador desde 2000'),
-(10004, 'David Halliday',		1975, 'EUA',	'FÌsico PH.D desde 1941')
+(10004, 'David Halliday',		1975, 'EUA',	'F√≠sico PH.D desde 1941')
 
 INSERT INTO tbLivro_Autor VALUES
 (1001, 10001),
@@ -115,9 +115,9 @@ INSERT INTO tbLivro_Autor VALUES
 INSERT INTO tbEdicao VALUES
 (0130661023, 189.99, 2018, 653, 10)
 
---	A universidade do Prof. Tannenbaum chama-se Vrije e n„o Vrij, modificar
+--	A universidade do Prof. Tannenbaum chama-se Vrije e n√£o Vrij, modificar
 UPDATE tbAutor
-SET biografiaAutor = 'Chefe do Departamento de Sistemas de ComputaÁ„o da Universidade de Vrije'
+SET biografiaAutor = 'Chefe do Departamento de Sistemas de Computa√ß√£o da Universidade de Vrije'
 WHERE idAutor = 10002
 
 --	A livraria vendeu 2 unidades do livro 0130661023, atualizar
