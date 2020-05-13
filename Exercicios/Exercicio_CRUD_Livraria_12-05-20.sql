@@ -85,10 +85,11 @@ ALTER TABLE tbEditora
 ALTER COLUMN nomeEditora VARCHAR(30) NULL
 
 --	Modificar o tipo da coluna ano da tabela autor para int
---	PERGUNTAR PARA O PROFESSOR SE É ISSO MESMO, POIS QUANDO TENTO MUDAR RETORNAR
---	Operand type clash: date is incompatible with int
 ALTER TABLE tbAutor
-ALTER COLUMN dataNascAutor INTEGER NULL
+DROP COLUMN dataNascAutor
+
+ALTER TABLE tbAutor
+ADD anoNascAutor INTEGER NULL
 
 GO
 
@@ -99,7 +100,7 @@ INSERT INTO tbLivro VALUES
 (1003, 'Redes de Computadores',	'EN',		2010),
 (1004, 'Android em Ação',		'PT-BT',	2018)
 
-INSERT INTO tbAutor VALUES
+INSERT INTO tbAutor(idAutor, nomeAutor, anoNascAutor, paisAutor, biografiaAutor) VALUES
 (10001, 'Inácio da Silva',		1975, 'Brasil', 'Programador WEB desde 1995'),
 (10002, 'Andrew Tannenbau,',	1975, 'EUA',	'Chefe do Departamento de Sistemas de Computação da Universidade de Vrij'),
 (10003, 'Luis Rocha',			1975, 'Brasil', 'Programador desde 2000'),
@@ -126,3 +127,5 @@ WHERE ISBN = 0130661023
 
 DELETE tbAutor
 WHERE idAutor = 10004
+
+SELECT * FROM tbEdicao
