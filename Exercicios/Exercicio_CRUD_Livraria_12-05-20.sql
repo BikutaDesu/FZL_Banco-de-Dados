@@ -33,7 +33,7 @@ GO
 CREATE TABLE tbEdicao(
 	ISBN			INTEGER			NOT NULL,
 	precoEdicao		DECIMAL(7,2)		NULL,
-ano				INTEGER			NULL,
+	ano			INTEGER			NULL,
 	numPagEdicao		INTEGER			NULL,
 	qtdEstoque		INTEGER			NULL,
 	PRIMARY KEY(ISBN)
