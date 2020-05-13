@@ -2,9 +2,6 @@
 --	Data: 12/05/2020
 
 --	Criar uma database Livraria, com as tabelas, conforme DER abaixo
-USE master
-DROP DATABASE dbLivraria
-
 CREATE DATABASE dbLivraria
 GO
 USE dbLivraria
