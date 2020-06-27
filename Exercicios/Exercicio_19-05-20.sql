@@ -1,10 +1,10 @@
 USE master 
 
-DROP DATABASE IF EXISTS exercicioConstraints
+DROP DATABASE IF EXISTS exercicioConstraints_ex_19_05
 
-CREATE DATABASE exercicioConstraints
+CREATE DATABASE exercicioConstraints_ex_19_05
 GO
-USE exercicioConstraints
+USE exercicioConstraints_ex_19_05
 GO
 
 CREATE TABLE users (

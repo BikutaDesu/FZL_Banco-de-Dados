@@ -1,8 +1,8 @@
 use master
-DROP DATABASE IF EXISTS livraria
-CREATE DATABASE livraria
+DROP DATABASE IF EXISTS livraria_ex_16_03
+CREATE DATABASE livraria_ex_16_03
 GO
-USE livraria
+USE livraria_ex_16_03
 GO
 
 CREATE TABLE clientes (

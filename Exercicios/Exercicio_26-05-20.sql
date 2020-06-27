@@ -1,6 +1,6 @@
 USE master
-DROP DATABASE IF EXISTS selects
-CREATE DATABASE selects
+DROP DATABASE IF EXISTS selects_ex_26_05
+CREATE DATABASE selects_ex_26_05
 GO
 USE selects
 GO
@@ -43,17 +43,17 @@ DBCC CHECKIDENT ('funcionario', RESEED, 0)
 DBCC CHECKIDENT ('projeto', RESEED, 1001)
  
 INSERT INTO funcionario (nome, sobrenome, logradouro, numero, bairro, cep, telefone, data_nasc, salario) VALUES
-('Fulano',  'da Silva', 'R. Voluntários da Patria',    8150,   'Santana',  '05423110', '76895248', '05-15-1974',   4350.00),
+('Fulano',  'da Silva', 'R. Voluntï¿½rios da Patria',    8150,   'Santana',  '05423110', '76895248', '05-15-1974',   4350.00),
 ('Cicrano', 'De Souza', 'R. Anhaia', 353,   'Barra Funda',  '03598770', '99568741', '08-25-1984',   1552.00),
 ('Beltrano',    'Dos Santos',   'R. ABC', 1100, 'Artur Alvim',  '05448000', '25639854', '06-02-1963',   2250.00)
  
 INSERT INTO funcionario (nome, sobrenome, logradouro, numero, bairro, cep, ddd, telefone, data_nasc, salario) VALUES
-('Tirano',  'De Souza', 'Avenida Águia de Haia', 4430, 'Artur Alvim',  '05448000', NULL,   NULL,   '10-15-1975',   2804.00)
+('Tirano',  'De Souza', 'Avenida ï¿½guia de Haia', 4430, 'Artur Alvim',  '05448000', NULL,   NULL,   '10-15-1975',   2804.00)
  
 INSERT INTO projeto VALUES
-('Implantação de Sistemas ','Colocar o sistema no ar'),
-('Implantação de Sistemas Novos','Colocar o sistema novo no ar'),
-('Modificação do módulo de cadastro','Modificar CRUD'),
+('Implantaï¿½ï¿½o de Sistemas ','Colocar o sistema no ar'),
+('Implantaï¿½ï¿½o de Sistemas Novos','Colocar o sistema novo no ar'),
+('Modificaï¿½ï¿½o do mï¿½dulo de cadastro','Modificar CRUD'),
 ('Teste de Sistema de Cadastro',NULL)
  
 INSERT INTO funcproj VALUES
@@ -63,17 +63,17 @@ INSERT INTO funcproj VALUES
 (2, 1002, '05-06-2015', '05-10-2015'),
 (3, 1003, '05-11-2015', '05-13-2015')
 
---Exercícios
+--Exercï¿½cios
 
---Nomes completos dos Funcionários que estão no
---projeto Modificação do Módulo de Cadastro
+--Nomes completos dos Funcionï¿½rios que estï¿½o no
+--projeto Modificaï¿½ï¿½o do Mï¿½dulo de Cadastro
 SELECT nome + ' ' + sobrenome AS 'Nome Completo' FROM funcionario WHERE id IN
 (SELECT id_funcionario FROM funcproj WHERE codigo_projeto IN 
-(SELECT codigo FROM projeto WHERE nome = 'Modificação do módulo de cadastro'))
+(SELECT codigo FROM projeto WHERE nome = 'Modificaï¿½ï¿½o do mï¿½dulo de cadastro'))
 
 
---Nomes completos e Idade, em anos (considere se fez ou ainda fará
---aniversário esse ano), dos funcionários
+--Nomes completos e Idade, em anos (considere se fez ou ainda farï¿½
+--aniversï¿½rio esse ano), dos funcionï¿½rios
 
 SELECT nome + ' ' + sobrenome AS 'Nome Completo', 
 	FLOOR(DATEDIFF(HOUR, data_nasc, GETDATE()) / 8766) AS Idade FROM funcionario
